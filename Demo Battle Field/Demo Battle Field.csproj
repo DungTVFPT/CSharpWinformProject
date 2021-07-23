@@ -1,0 +1,398 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{C6E7AAC8-08DD-4CA2-8B79-F4492FC43D33}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>Demo_Battle_Field</RootNamespace>
+    <AssemblyName>Demo Battle Field</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Animation.cs" />
+    <Compile Include="AnimationLevelUp.cs" />
+    <Compile Include="Bullet.cs" />
+    <Compile Include="FrmAbout.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmAbout.Designer.cs">
+      <DependentUpon>FrmAbout.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmHighScore.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmHighScore.Designer.cs">
+      <DependentUpon>FrmHighScore.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmMain.Designer.cs">
+      <DependentUpon>FrmMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmMenu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmMenu.Designer.cs">
+      <DependentUpon>FrmMenu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Item.cs" />
+    <Compile Include="Player.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Zombie.cs" />
+    <EmbeddedResource Include="FrmAbout.resx">
+      <DependentUpon>FrmAbout.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmHighScore.resx">
+      <DependentUpon>FrmHighScore.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmMain.resx">
+      <DependentUpon>FrmMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmMenu.resx">
+      <DependentUpon>FrmMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BG.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Alert0.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Alert1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Alert2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Alert3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Alert4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BulletRight.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BulletUp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Death1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Death2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Death3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Death4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\DownTree.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\EWD1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\EWD2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\EWD3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\EWL1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\EWL2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\EWL3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\EWR1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\EWR2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\EWR3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\EWU1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\EWU2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\EWU3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Exp1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Exp2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Exp3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Exp4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Exp5.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Explode1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Explode2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Explode3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Explode4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ItemAmmo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ItemApple.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ItemHp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ItemShield.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ItemShieldd.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\LevelUp1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\LevelUp2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\LevelUp3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\LevelUp4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\LevelUp5.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\LevelUp6.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Num0.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Num1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Num2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Num3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Num4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Num5.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Num6.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Num7.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Num8.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Num9.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Rock.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Rock2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Rock3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Rock4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Rock6.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Slash.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Spawn1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Spawn2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Spawn3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Spawn4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\StandDown.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\StandLeft.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\StandRight.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\StandUp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Stump.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Stump2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\TopTree.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\WalkDown1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\WalkDown2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\WalkDown3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\WalkDown4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\WalkLeft1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\WalkLeft2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\WalkLeft3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\WalkLeft4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\WalkRight1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\WalkRight2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\WalkRight3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\WalkRight4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\WalkUp1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\WalkUp2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\WalkUp3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\WalkUp4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\0.txt" />
+    <Content Include="Resources\1.txt" />
+    <Content Include="Resources\2.txt" />
+    <Content Include="Resources\3.txt" />
+    <Content Include="Resources\Items.txt" />
+    <Content Include="Resources\Items0.txt" />
+    <Content Include="Resources\FileScore.txt" />
+    <Content Include="Resources\Items1.txt" />
+    <Content Include="Resources\Items2.txt" />
+    <Content Include="Resources\Items3.txt" />
+    <Content Include="Resources\Items4.txt" />
+    <Content Include="Resources\Items5.txt" />
+    <Content Include="Resources\Player.txt" />
+    <Content Include="Resources\Status.txt" />
+    <None Include="Resources\btnHome.png" />
+    <None Include="Resources\btnAbout.png" />
+    <None Include="Resources\btnQuit.png" />
+    <None Include="Resources\btnHighScore.png" />
+    <None Include="Resources\btnPlay.png" />
+    <Content Include="Resources\burst.wav" />
+    <Content Include="Resources\shoot.wav" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
